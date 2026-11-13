@@ -1,0 +1,1226 @@
+<title>Maximus Growth Playbook</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  :root{
+    --ink:#0F1D33; --ink-soft:#243550; --slate:#4A5768; --slate-light:#6B7889;
+    --rule:#D4D2CD; --rule-soft:#E6E4E0; --paper:#FAF9F7; --card:#FFFFFF;
+    --brick:#9E4526; --brick-bright:#B4522E; --brick-soft:#F5E6DF;
+    --go:#245A41; --go-soft:#DCEBE3;
+    --hold:#75591A; --hold-soft:#F5ECD8;
+    --stop:#8A2C2C; --stop-soft:#F7E4E4;
+    --new:#2A4C77; --new-soft:#DFE9F4;
+    --shadow:0 1px 2px rgba(15,29,51,.07),0 4px 16px rgba(15,29,51,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ink:#F2F5F9; --ink-soft:#D3DBE6; --slate:#A6B2C2; --slate-light:#8894A6;
+      --rule:#313D4F; --rule-soft:#26313F; --paper:#0E141C; --card:#171F2A;
+      --brick:#EE9068; --brick-bright:#EE9068; --brick-soft:#3E2519;
+      --go:#8FD1AB; --go-soft:#1A3327;
+      --hold:#E3C572; --hold-soft:#352B16;
+      --stop:#EE9797; --stop-soft:#3B2120;
+      --new:#8FB6E0; --new-soft:#1B2A3D;
+      --shadow:0 1px 2px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#F2F5F9; --ink-soft:#D3DBE6; --slate:#A6B2C2; --slate-light:#8894A6;
+    --rule:#313D4F; --rule-soft:#26313F; --paper:#0E141C; --card:#171F2A;
+    --brick:#EE9068; --brick-bright:#EE9068; --brick-soft:#3E2519;
+    --go:#8FD1AB; --go-soft:#1A3327;
+    --hold:#E3C572; --hold-soft:#352B16;
+    --stop:#EE9797; --stop-soft:#3B2120;
+    --new:#8FB6E0; --new-soft:#1B2A3D;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:19px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 110px;}
+  h1,h2,h3,h4,.arch{font-family:Archivo,system-ui,sans-serif;}
+  h1,h2,h3{text-wrap:balance;}
+  a{color:var(--brick);}
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--brick-bright);outline-offset:3px;border-radius:3px;}
+
+  .masthead{padding:56px 0 34px;border-bottom:3px solid var(--ink);}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--brick);margin:0 0 16px;font-family:Archivo,sans-serif;}
+  h1{font-size:clamp(34px,6vw,52px);font-weight:800;line-height:1.06;letter-spacing:-.02em;margin:0 0 18px;}
+  .standfirst{font-size:21px;line-height:1.6;color:var(--slate);margin:0;max-width:60ch;}
+  .countline{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 24px;
+    font-family:Archivo,sans-serif;font-size:14px;font-weight:700;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--slate);}
+
+  .starthere{margin:34px 0 44px;padding:30px 32px;background:var(--card);
+    border:2px solid var(--brick);border-radius:6px;box-shadow:var(--shadow);}
+  .starthere .label{display:inline-block;background:var(--brick);color:#fff;font-family:Archivo,sans-serif;
+    font-size:13px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+    padding:6px 14px;border-radius:4px;margin-bottom:18px;}
+  .starthere h2{font-size:27px;margin:0 0 10px;font-weight:800;letter-spacing:-.015em;}
+  .starthere > p{font-size:19px;color:var(--ink-soft);margin:0 0 22px;}
+  .three{list-style:none;margin:0;padding:0;display:grid;gap:16px;}
+  .three li{display:flex;gap:16px;align-items:flex-start;}
+  .three .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--brick);color:#fff;
+    font-family:Archivo,sans-serif;font-weight:800;font-size:18px;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .three strong{display:block;font-size:19.5px;color:var(--ink);font-weight:700;line-height:1.4;}
+  .three span{color:var(--slate);font-size:17.5px;display:block;margin-top:2px;}
+
+  .situation{margin:0 0 16px;padding:28px 30px;background:var(--card);
+    border:1px solid var(--rule);border-left:5px solid var(--slate-light);
+    border-radius:5px;box-shadow:var(--shadow);}
+  .situation h2{font-size:17px;letter-spacing:.1em;text-transform:uppercase;
+    margin:0 0 16px;color:var(--slate);font-weight:700;}
+  .situation p{margin:0 0 14px;color:var(--ink-soft);font-size:18.5px;}
+  .situation p:last-child{margin-bottom:0;}
+
+  .tablescroll{overflow-x:auto;margin:26px 0 6px;}
+  .facts{width:100%;border-collapse:collapse;font-size:18px;min-width:520px;}
+  .facts th{text-align:left;font-family:Archivo,sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--slate);
+    padding:0 16px 11px 0;border-bottom:2px solid var(--rule);}
+  .facts td{padding:14px 16px 14px 0;border-bottom:1px solid var(--rule-soft);
+    vertical-align:top;color:var(--ink-soft);}
+  .facts td:first-child{font-weight:600;color:var(--ink);width:42%;}
+  .num{font-variant-numeric:tabular-nums;}
+
+  .tier{margin:70px 0 8px;padding-top:30px;border-top:3px solid var(--ink);}
+  .tier-rank{font-family:Archivo,sans-serif;font-size:13px;font-weight:800;
+    letter-spacing:.17em;text-transform:uppercase;color:var(--brick);}
+  .tier h2{font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.018em;margin:10px 0 10px;}
+  .tier .why{color:var(--slate);margin:0;max-width:62ch;font-size:18.5px;}
+  .tier-when{display:inline-block;margin-top:14px;background:var(--go-soft);color:var(--go);
+    font-family:Archivo,sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;
+    padding:7px 14px;border-radius:4px;}
+  .tier-when.later{background:var(--hold-soft);color:var(--hold);}
+  .tier-when.stopcolor{background:var(--stop-soft);color:var(--stop);}
+
+  details.op{background:var(--card);border:1px solid var(--rule);border-radius:5px;
+    margin:18px 0;box-shadow:var(--shadow);overflow:hidden;}
+  details.op[open]{border-color:var(--slate-light);}
+  summary.op-head{list-style:none;cursor:pointer;padding:24px 26px;display:flex;gap:18px;align-items:flex-start;}
+  summary.op-head::-webkit-details-marker{display:none;}
+  summary.op-head:hover{background:var(--brick-soft);}
+  .opnum{flex:none;width:44px;height:44px;border-radius:5px;background:var(--brick-soft);color:var(--brick);
+    font-family:Archivo,sans-serif;font-weight:800;font-size:18px;
+    display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;}
+  .op-title{flex:1;min-width:0;}
+  .op-title h3{font-size:23px;font-weight:700;letter-spacing:-.012em;margin:0 0 4px;line-height:1.32;}
+  .op-title .tagline{color:var(--slate);margin:0;font-size:18px;line-height:1.5;}
+  .newbadge{display:inline-block;background:var(--new-soft);color:var(--new);
+    font-family:Archivo,sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;padding:3px 8px;border-radius:3px;margin-left:8px;vertical-align:middle;}
+  .chev{flex:none;color:var(--slate-light);font-size:15px;margin-top:14px;
+    font-family:Archivo,sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+  details.op[open] .chev-open{display:none;}
+  details.op:not([open]) .chev-close{display:none;}
+  .op-body{padding:0 26px 26px;border-top:1px solid var(--rule-soft);margin-top:2px;}
+
+  .dofirst{background:var(--go-soft);border-radius:5px;padding:18px 20px;margin:22px 0 4px;
+    display:flex;gap:14px;align-items:flex-start;}
+  .dofirst .tag{font-family:Archivo,sans-serif;font-size:12px;font-weight:800;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--go);flex:none;margin-top:4px;}
+  .dofirst p{margin:0;font-size:19px;font-weight:600;color:var(--ink);line-height:1.55;}
+
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
+    gap:1px;background:var(--rule-soft);border:1px solid var(--rule-soft);
+    border-radius:5px;margin:22px 0;overflow:hidden;}
+  .spec{background:var(--card);padding:13px 16px;}
+  .spec dt{font-family:Archivo,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--slate);margin-bottom:4px;}
+  .spec dd{margin:0;font-size:17px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+
+  .op-body h4{font-family:Archivo,sans-serif;font-size:13px;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--slate);margin:26px 0 12px;}
+  .op-body p{margin:0 0 14px;color:var(--ink-soft);font-size:18.5px;}
+
+  ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:14px;}
+  ol.steps li{counter-increment:s;display:flex;gap:15px;align-items:flex-start;
+    color:var(--ink-soft);font-size:18.5px;line-height:1.6;}
+  ol.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;
+    background:var(--ink);color:var(--paper);font-family:Archivo,sans-serif;font-weight:800;font-size:15px;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:12px;}
+  ul.plain li{color:var(--ink-soft);font-size:18.5px;padding-left:24px;position:relative;line-height:1.6;}
+  ul.plain li::before{content:"";position:absolute;left:4px;top:12px;width:8px;height:8px;
+    border-radius:50%;background:var(--brick);}
+
+  .script{background:var(--paper);border:1px solid var(--rule);border-left:4px solid var(--slate-light);
+    border-radius:5px;padding:18px 20px;margin:20px 0 0;font-style:italic;
+    color:var(--ink-soft);font-size:18.5px;line-height:1.65;}
+  .script strong{font-style:normal;font-family:Archivo,sans-serif;font-size:12px;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--slate);
+    display:block;margin-bottom:8px;font-weight:700;}
+
+  .flag{display:flex;gap:14px;align-items:flex-start;background:var(--hold-soft);
+    border-radius:5px;padding:16px 19px;margin:20px 0 0;font-size:18px;color:var(--ink-soft);line-height:1.6;}
+  .flag .mark{color:var(--hold);font-weight:800;font-family:Archivo,sans-serif;
+    flex:none;font-size:12px;letter-spacing:.13em;margin-top:5px;text-transform:uppercase;}
+
+  .avoid{background:var(--stop-soft);border:1px solid var(--rule);border-radius:5px;padding:28px 30px;margin:22px 0;}
+  .avoid dl{margin:0;}
+  .avoid dt{font-weight:700;color:var(--ink);margin-top:20px;font-size:19.5px;line-height:1.4;}
+  .avoid dt:first-of-type{margin-top:0;}
+  .avoid dd{margin:4px 0 0;color:var(--ink-soft);font-size:18px;line-height:1.6;}
+
+  .phase{background:var(--card);border:1px solid var(--rule);border-radius:5px;
+    padding:26px 28px;margin:18px 0;box-shadow:var(--shadow);}
+  .phase-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:14px;}
+  .phase-when{font-family:Archivo,sans-serif;font-size:13px;font-weight:800;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--paper);background:var(--ink);padding:6px 13px;border-radius:4px;}
+  .phase h3{font-size:21px;margin:0;font-weight:700;letter-spacing:-.01em;}
+  .phase .spend{margin-left:auto;font-family:Archivo,sans-serif;font-size:15px;
+    font-weight:800;color:var(--brick);font-variant-numeric:tabular-nums;}
+
+  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:16px;margin:24px 0;}
+  .kpi div{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--brick);
+    border-radius:5px;padding:18px 19px;box-shadow:var(--shadow);}
+  .kpi dt{font-family:Archivo,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--slate);margin-bottom:7px;}
+  .kpi dd{margin:0;font-family:Archivo,sans-serif;font-size:27px;font-weight:800;
+    color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.015em;line-height:1.1;}
+  .kpi .sub{font-family:"Source Sans 3",sans-serif;font-size:15.5px;font-weight:400;
+    color:var(--slate);margin-top:5px;line-height:1.4;}
+
+  .closing{margin-top:52px;padding:32px;background:var(--ink);color:#F2F5F9;border-radius:6px;}
+  .closing h2{margin:0 0 16px;font-size:24px;color:#fff;font-weight:800;letter-spacing:-.015em;}
+  .closing p{margin:0 0 14px;color:#CAD5E3;font-size:19px;line-height:1.7;}
+  .closing p:last-child{margin-bottom:0;}
+  .closing strong{color:#fff;}
+
+  footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);
+    font-size:16px;color:var(--slate);line-height:1.6;}
+
+  @media (prefers-reduced-motion:no-preference){summary.op-head{transition:background .15s ease;}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  @media (max-width:600px){
+    body{font-size:18px;}
+    .wrap{padding:0 16px 80px;}
+    .starthere,.situation,.avoid,.phase,.closing{padding-left:20px;padding-right:20px;}
+    summary.op-head{padding:20px;gap:14px;}
+    .op-body{padding:0 20px 22px;}
+    .chev{display:none;}
+    .phase .spend{margin-left:0;width:100%;}
+  }
+  @media print{
+    details.op{break-inside:avoid;}
+    details.op > .op-body{display:block !important;}
+    .chev{display:none;}
+    body{font-size:12pt;}
+  }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Customer Acquisition Strategy</p>
+  <h1>Maximus Construction Growth Playbook</h1>
+  <p class="standfirst">Every realistic way to get more kitchen, bathroom, and closet customers across your NJ and Bucks County service area — ranked in the order you should actually do them.</p>
+  <div class="countline">
+    <span>30 Opportunities</span><span>6 Priority Tiers</span><span>Organic &amp; Paid</span>
+  </div>
+</header>
+
+<section class="starthere">
+  <span class="label">Start Here</span>
+  <h2>Do these three things first</h2>
+  <p>Everything else can wait. These three cost nothing, take about a week, and should produce a signed job within 30 days.</p>
+  <ol class="three">
+    <li><span class="n">1</span><div>
+      <strong>Post weekly project progress on Google and social media</strong>
+      <span>Free. Photos from jobs you're already doing show homeowners real, active work. → <a href="#op10">See #10</a></span>
+    </div></li>
+    <li><span class="n">2</span><div>
+      <strong>Call every past customer and ask for a Google review</strong>
+      <span>You have 6. Competitors have 12–26. Reaching 30 makes you the obvious choice. → <a href="#op05">See #5</a></span>
+    </div></li>
+    <li><span class="n">3</span><div>
+      <strong>Fix the website before sending traffic to it</strong>
+      <span>Real reviews, license number, price ranges, and no "0 +" placeholder counters. → <a href="#op12">See #12</a></span>
+    </div></li>
+  </ol>
+</section>
+
+<section class="situation">
+  <h2>Where You Stand Today</h2>
+  <p>You spend about <strong>$1,500 a month</strong> on Meta at roughly <strong>$30 per kitchen lead</strong> — around 50 leads a month — and close <strong>2–3 customers</strong>. That's a 4–6% close rate, and only 40 contacts have built up in GoHighLevel. Both numbers say the same thing: these are low-intent taps, not buyers.</p>
+  <p>The bigger problem is <strong>trust signals</strong>. Six Google reviews. Someone spending $35,000 on a kitchen checks reviews before they ever call. Against competitors sitting at 12–26, this is a fight you can win in 90 days.</p>
+  <p>Nothing here asks you to stop what works. It asks you to move money and effort toward people who have already decided to spend.</p>
+</section>
+
+<div class="tablescroll">
+<table class="facts">
+  <thead><tr><th scope="col">Market Reality</th><th scope="col">What It Means For You</th></tr></thead>
+  <tbody>
+    <tr><td class="num">NJ mid-range kitchen: $25k–$60k<br>Mercer County 10&times;10: $14k–$52k</td>
+      <td>One kitchen is roughly <strong>$8k–$15k gross profit</strong>. You can pay $300–600 to win a sale and still come out far ahead.</td></tr>
+    <tr><td class="num">Google kitchen/bath leads: $90–$400<br>Cost per click: $8–$18</td>
+      <td>Expensive per lead, but 5–10&times; the intent of a Facebook form. At your job values, the math works.</td></tr>
+    <tr><td>Princeton-area competitors:<br><span class="num">Liamar 18 · Griggstown 26 · Fresh Start 12 reviews</span></td>
+      <td>Nobody dominates. <strong>40+ reviews makes you the top-reviewed remodeler</strong> in several of your towns.</td></tr>
+    <tr><td class="num">61% of homeowners trust word-of-mouth<br>47% of remodelers say referrals are #1</td>
+      <td>Past customers and referral relationships are your highest-return, lowest-cost channel.</td></tr>
+    <tr><td>Home sales trigger remodels</td>
+      <td>People renovate right after buying or right before selling. <strong>Real estate is the biggest trigger there is</strong> — and almost no remodeler works it systematically.</td></tr>
+    <tr><td>NJ publishes construction permits as open data</td>
+      <td>A free, legal, filterable list of homeowners actively spending money on their houses.</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ============ TIER 1 ============ -->
+<section class="tier">
+  <p class="tier-rank">Priority 1 · Biggest long-term prize</p>
+  <h2>The Real Estate Multiplier Engine</h2>
+  <p class="why">Home sales are the biggest remodeling trigger that exists. Every sale creates a buyer who wants changes before moving in, or a seller who needs updates to get a better price. Build ten of these relationships and they feed you for years with no ad spend at all.</p>
+  <span class="tier-when">Start weeks 3–4 · Free to begin</span>
+</section>
+
+<details class="op" id="op01">
+  <summary class="op-head"><span class="opnum">01</span><span class="op-title">
+    <h3>MLS "Fixer-Upper" &amp; As-Is Monitoring</h3>
+    <p class="tagline">Reach buyers of run-down houses while they're still in escrow</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Ask a friendly agent to set you up with an MLS alert for "as-is" listings in your top 15 ZIPs. Offer those buyers a free renovation estimate.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$100–200/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–60 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Very High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Listings marked "As-Is," "Needs TLC," or "Investor Special" are bought by people who <em>already know</em> they're renovating. Catch them during escrow, before they've picked a contractor, and you face no competition. Renovation costs can often be rolled into their mortgage, removing the budget objection entirely.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Subscribe to PropStream, or ask an agent to set up an MLS saved-search alert on your top 15 ZIPs.</li>
+      <li>Filter for single-family, 15+ years old, keywords: As-Is, TLC, Investor, Handyman, Estate Sale.</li>
+      <li>Make a one-page offer: free renovation estimate, 48-hour turnaround, scope and budget from listing photos.</li>
+      <li>Contact the <strong>listing agent</strong>, not the buyer. Offer it as a free service they can pass along.</li>
+      <li>Log each property in GHL with its closing date, and follow up the week it closes.</li>
+    </ol>
+    <div class="script"><strong>Script — call or email the agent</strong>"Hi [Name] — I'm a licensed remodeler in [town]. I saw your listing at [address] is selling as-is. I give your buyers a free 48-hour renovation estimate so they know what the work costs before they commit. Costs you nothing and it helps deals close. Want me to send one for this property?"</div>
+  </div>
+</details>
+
+<details class="op" id="op02">
+  <summary class="op-head"><span class="opnum">02</span><span class="op-title">
+    <h3>The Inspection Report Pitch</h3>
+    <p class="tagline">Be the contractor agents call when inspections come back bad</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Email 20 buyer's agents offering a free 24-hour repair estimate whenever an inspection comes back with problems.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–90 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Very High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Every inspection turns up problems, and agents need repair numbers <em>fast</em> to negotiate credits before closing. Most contractors won't turn an estimate around in 24 hours, so agents are always stuck. Solve that and you become their go-to. You get paid twice — sometimes for the repair, and again when the new owner renovates months later.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>List 20 active buyer's agents in your ZIPs. Search recently sold listings to find who actually closes.</li>
+      <li>Make a one-page "24-Hour Inspection Response" sheet: what you cover, turnaround promise, license number.</li>
+      <li>Email then call each agent. Offer it free with no obligation.</li>
+      <li>When a request comes in, <strong>hit 24 hours every single time.</strong> That reliability is the whole product.</li>
+      <li>Tag the buyer in GHL and set a 60-day follow-up for renovation work after they move in.</li>
+    </ol>
+    <div class="flag"><span class="mark">Careful</span><div>Only promise 24 hours if you can truly hold it. One missed deadline and the agent stops calling for good.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op03">
+  <summary class="op-head"><span class="opnum">03</span><span class="op-title">
+    <h3>Pre-Sale Upgrades With Listing Agents</h3>
+    <p class="tagline">Renovate before the sale, get paid at closing</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Approach the top 10 listing agents in Princeton, Basking Ridge, and New Hope. Offer fixed-price cosmetic renovations that sellers pay for out of closing proceeds.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium–High</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0 marketing</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–120 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Very High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Listing agents constantly meet sellers whose dated kitchen is costing them $30–50k at sale. Compass Concierge and Curbio built whole companies on exactly this. A local contractor who does it faster and gets paid at closing is very attractive to a busy top-producing agent.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Find the top 10 listing agents by volume in your best ZIPs — 08540 Princeton, 07920 Basking Ridge, 18938 New Hope.</li>
+      <li>Build a "Pre-Sale Facelift" menu with fixed prices: kitchen refresh, bathroom update, closet build-out, paint and floors.</li>
+      <li>Have your attorney draft a simple deferred-payment agreement secured at closing.</li>
+      <li>Start small. <strong>Cap yourself at one deferred job at a time</strong> until you've proven the model.</li>
+      <li>Photograph before and after, and hand the agent the images for their marketing. They'll bring you the next one.</li>
+    </ol>
+    <div class="flag"><span class="mark">Risk</span><div>You're financing the work until closing, and deals do fall through. Only offer this on solid homes in fast-moving ZIPs, and never carry more than one at a time until you've run several successfully.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op04">
+  <summary class="op-head"><span class="opnum">04</span><span class="op-title">
+    <h3>Interior Designer White-Labeling</h3>
+    <p class="tagline">Be the licensed crew that builds their designs</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Find 10 independent interior designers on Houzz and Instagram within 30 miles. Offer to build their designs — you never touch their client relationship.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–90 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Independent designers sell projects constantly but rarely have reliable insured crews to build them. Their clients are already sold, already qualified, usually at the higher end of the budget range. You skip selling entirely. Closets are an especially natural fit.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Search Houzz and Instagram for independent designers within 30 miles posting kitchen and closet work.</li>
+      <li>Reach out offering execution, not competition. Be explicit that you never poach their clients.</li>
+      <li>Offer a clear trade discount or referral split, and put it in writing.</li>
+      <li>Deliver the first project flawlessly — on schedule, clean site, daily photo updates.</li>
+      <li>Ask for an introduction to two other designers they know.</li>
+    </ol>
+  </div>
+</details>
+
+
+<!-- ============ TIER 2 ============ -->
+<section class="tier">
+  <p class="tier-rank">Priority 2 · Do this week</p>
+  <h2>Trust, Money &amp; Your Existing Assets</h2>
+  <p class="why">Nearly free, produces revenue within days, and it makes every paid channel below work better. Running ads before this is done is wasted money — you'd be paying to send buyers to a business that looks unproven.</p>
+  <span class="tier-when">Start now · Almost entirely free</span>
+</section>
+
+<details class="op" id="op05" open>
+  <summary class="op-head"><span class="opnum">05</span><span class="op-title">
+    <h3>Google Review Engine: 6 → 50</h3>
+    <p class="tagline">The single highest-return free action available to you</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Call all 10 past customers this week and ask for a Google review. Then build a GHL workflow that asks automatically at the end of every job.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–60 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Very High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Reviews help you in three places at once: Google Maps ranking, Local Services Ads ranking, and your close rate on every estimate. Competitors sit at 12–26. Getting to 50 makes you the obvious choice in your towns — permanently, at no ongoing cost.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Build a GHL workflow: text at job completion, email 3 days later, final reminder day 7.</li>
+      <li>Print QR cards linking straight to your Google review form. Hand one over in person at final walkthrough.</li>
+      <li>Personally call all 10 past customers this week. Most say yes if you just ask.</li>
+      <li>Ask them to mention the service and town — "kitchen remodel in Hamilton" — which helps you rank locally.</li>
+      <li>Reply to every review within 24 hours. Google rewards it.</li>
+    </ol>
+    <div class="script"><strong>Text message template</strong>"Hi [Name] — it was a pleasure building your [kitchen]. Would you mind leaving us a quick Google review? It really helps a small local business like ours. Takes about 30 seconds: [link] — Thank you! Maximus Construction"</div>
+  </div>
+</details>
+
+<details class="op" id="op07">
+  <summary class="op-head"><span class="opnum">07</span><span class="op-title">
+    <h3>Warranty &amp; Maintenance Follow-Up Program</h3>
+    <p class="tagline">Turn every finished job into two more <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Build a GHL workflow that checks in at 6 months and 1 year after every job. Free 15-minute visit. Ask for referrals while you're standing there.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Very Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>6–12 months</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Almost no remodeler ever contacts a customer again after the final payment. A free check-in visit costs you 15 minutes and generates three things: a referral ask at maximum goodwill, a review if you never got one, and the next project — kitchen customers need bathrooms, bathroom customers need closets. Referrals are the #1 lead source for 47% of remodelers, and this is how you manufacture them deliberately instead of hoping.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Build GHL automations that fire at 6 months and 12 months after job completion.</li>
+      <li>Offer a genuine free check-up visit — tighten hardware, check caulk, inspect the work.</li>
+      <li>While you're there, ask directly: "Do you know anyone else thinking about a remodel?"</li>
+      <li>Offer a real referral reward — $500 cash or credit on a signed job.</li>
+      <li>Photograph the space again after a year of living in it. Those photos sell better than staged ones.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op10">
+  <summary class="op-head"><span class="opnum">10</span><span class="op-title">
+    <h3>Google Business Profile Domination</h3>
+    <p class="tagline">The free asset most remodelers set up once and forget</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Post project photos every week and turn on messaging. Fifteen minutes a week beats most competitors here.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–90 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Turn on every relevant category: Kitchen Remodeler, Bathroom Remodeler, Closet Service, Roofing Contractor, General Contractor.</li>
+      <li>Post project photos weekly. Geotag them and name the town in the caption.</li>
+      <li>Fill the Q&amp;A section with real buyer questions and answer them yourself.</li>
+      <li>Turn on messaging and reply within minutes — response speed affects ranking.</li>
+      <li>List all service areas but lead with your 15 priority ZIPs.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op11">
+  <summary class="op-head"><span class="opnum">11</span><span class="op-title">
+    <h3>Reviews Beyond Google</h3>
+    <p class="tagline">Yelp, Houzz, BBB, Facebook — buyers check more than one <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Claim your free profiles on Houzz, Yelp, BBB, and Facebook. Ask every happy customer for a review on whichever platform they already use.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–90 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Serious buyers cross-check. They find you on Google, then look you up on Houzz and Yelp to see if the story holds. Empty profiles on those platforms undercut a strong Google presence. Houzz matters most for you — Princeton and Bucks County homeowners browse it for design ideas with real budgets, and a strong portfolio there generates leads on its own.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Claim free profiles on Houzz, Yelp, BBB, Facebook, and Angi (the free listing, not paid leads).</li>
+      <li>Upload your best 10 projects to Houzz with full before-and-after sets.</li>
+      <li>When asking for reviews, ask each customer for whichever platform they already use.</li>
+      <li>Keep name, address, and phone identical everywhere — inconsistency hurts local SEO.</li>
+      <li>Prioritize Houzz. It's the one where your buyers actually browse.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op12">
+  <summary class="op-head"><span class="opnum">12</span><span class="op-title">
+    <h3>Website Conversion Fixes</h3>
+    <p class="tagline">Make the site do its job when traffic arrives</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Add real reviews, your license number, and price ranges. Check your homepage counters — placeholder "0 +" figures were still showing on the live page.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$1,000–3,000</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–4 weeks</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Every ad dollar you spend lands here, so improving this page multiplies the return on everything else. Your blog also hasn't been updated since October 2024, which signals an inactive business to Google.</p>
+    <h4>What to change</h4>
+    <ul class="plain">
+      <li>Check the homepage stat counters. As of the last check the live page still rendered "0 +" for Client Reviews and Team Members — either fix the numbers or remove the section.</li>
+      <li>Put your NJ HIC license number in the footer and on every service page — legally required, and it converts.</li>
+      <li>Add real before-and-after galleries organized by service and by town.</li>
+      <li>Publish honest price ranges. "Kitchens from $28,000" filters out tire-kickers.</li>
+      <li>Add a click-to-call button fixed to the bottom of the screen on mobile.</li>
+    </ul>
+  </div>
+</details>
+
+
+<!-- ============ TIER 3 ============ -->
+<section class="tier">
+  <p class="tier-rank">Priority 3 · After Tier 2</p>
+  <h2>Paid Intent Capture</h2>
+  <p class="why">Reaching homeowners at the exact moment they've decided to spend. Costs more per lead than Meta but converts several times better. Turn these on only <em>after</em> Tier 2 — paid traffic landing on a 6-review business is money burned.</p>
+  <span class="tier-when later">Start weeks 5–8 · $2,000–3,000/month</span>
+</section>
+
+<details class="op" id="op13">
+  <summary class="op-head"><span class="opnum">13</span><span class="op-title">
+    <h3>Google Local Services Ads</h3>
+    <p class="tagline">Your biggest paid opportunity — the "Google Guaranteed" badge</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Apply now at ads.google.com/local-services-ads — verification takes weeks, so start the paperwork even if you won't spend until later.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$1.5k–3k/mo</dd></div>
+      <div class="spec"><dt>Per lead</dt><dd>$90–400</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–4 weeks</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>These ads sit <em>above</em> everything else on Google with a green "Google Guaranteed" badge. You pay per lead, not per click. Ranking depends on response speed, review count, and lead quality — <strong>not just budget</strong> — so you can outrank much bigger spenders. Your fast GHL follow-up is literally a ranking factor.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Apply at ads.google.com/local-services-ads and complete license and insurance verification.</li>
+      <li>Set categories to kitchen, bathroom, and closet work. Target your 15 priority ZIPs — not all 100.</li>
+      <li>Start at $75–100 a day and leave it alone for 30 days before judging.</li>
+      <li>Answer every call live. Missed calls directly hurt ranking.</li>
+      <li><strong>Dispute bad leads in the dashboard</strong> — wrong service, wrong area, spam. Google credits them back.</li>
+    </ol>
+    <div class="flag"><span class="mark">Order matters</span><div>Get to 20+ reviews before scaling spend here. Review count feeds ranking, so the same budget buys noticeably more at 30 reviews than at 6.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op14">
+  <summary class="op-head"><span class="opnum">14</span><span class="op-title">
+    <h3>Google Search Ads — Exact Match Only</h3>
+    <p class="tagline">Long, specific keywords sent to matching landing pages</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Run exact-match only, with separate campaigns for kitchen, bathroom, and closet. Never broad match — it will drain your budget.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$1.5k+/mo</dd></div>
+      <div class="spec"><dt>Per lead</dt><dd>$150–400</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–4 weeks</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Someone typing "custom walk-in closet builder Princeton NJ" has a budget and a deadline. At $8–18 a click this looks expensive — until you remember one kitchen carries $8–15k gross profit. You can pay $500 per <em>sale</em> and still win big.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Use exact match only. Broad match burns budget on "kitchen cabinet ideas" traffic.</li>
+      <li>Build separate campaigns for kitchen, bathroom, and closet. Never mix them.</li>
+      <li>Send each ad group to its own landing page matching the search exactly.</li>
+      <li>Add negative keywords aggressively: DIY, cheap, jobs, salary, ideas, pictures, cabinets only.</li>
+      <li>Only run ads during hours when someone can answer the phone.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op15">
+  <summary class="op-head"><span class="opnum">15</span><span class="op-title">
+    <h3>Bing / Microsoft Ads</h3>
+    <p class="tagline">Older, wealthier searchers. Cheap clicks, almost no competition <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Once Google Search Ads work, import the exact same campaigns into Microsoft Ads. Takes about an hour.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Very Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$300–800/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–4 weeks</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Bing skews older, higher-income, and homeowner-heavy — which is precisely your buyer. It's the default search engine on every Windows computer, and many people over 50 never change it. Clicks typically run well below Google's because almost no remodelers bother bidding. Microsoft Ads has a direct Google Ads import, so this is nearly free to set up once Google is running.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Get Google Search Ads working first — don't build this from scratch.</li>
+      <li>Create a Microsoft Ads account and use the built-in Google Ads import.</li>
+      <li>Start with a small budget, roughly 20% of your Google spend.</li>
+      <li>Check the demographics report — you'll usually see an older, wealthier audience.</li>
+      <li>Compare cost per lead against Google after 30 days and shift budget toward the winner.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op16">
+  <summary class="op-head"><span class="opnum">16</span><span class="op-title">
+    <h3>YouTube &amp; Streaming TV Ads</h3>
+    <p class="tagline">Hyper-local video where no remodeler is bidding <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Take your best before-and-after project video, cut it to 30 seconds, and run it on YouTube targeted to your 15 ZIPs. Budget $15–20 a day.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$400–800/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–60 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate–High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Remodeling is a visual, emotional purchase — video sells it in a way text and photos cannot. YouTube lets you target by ZIP, homeowner status, and even people actively researching home improvement, at a fraction of what search clicks cost. Streaming TV (Hulu, Roku) now sells the same hyper-local targeting to small businesses. Almost no local remodeler runs video, so you'd have the channel largely to yourself. It also pairs perfectly with your existing project footage — no new production cost.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Cut a 30-second before-and-after from footage you already have. Phone video is fine.</li>
+      <li>Open a YouTube campaign in Google Ads targeting your 15 priority ZIPs only.</li>
+      <li>Layer on homeowner and home-improvement in-market audiences.</li>
+      <li>Start at $15–20 a day. Track calls and form fills, never views.</li>
+      <li>Once it works, test the same video on Hulu or Roku through their small-business ad tools.</li>
+    </ol>
+    <div class="flag"><span class="mark">Measure right</span><div>Video builds awareness, so leads often arrive later and through other channels. Watch whether your branded searches and direct calls rise while it runs.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op17">
+  <summary class="op-head"><span class="opnum">17</span><span class="op-title">
+    <h3>Meta Retargeting</h3>
+    <p class="tagline">Stay visible during a 3–9 month decision <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Install the Meta pixel and run a $5–10/day campaign to everyone who visited your site or watched your videos.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$150–300/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–4 weeks</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High for the cost</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Remodeling decisions take months, and most people who visit your site aren't ready that day. Retargeting keeps you in front of them for pennies while they think it over. This is usually the cheapest cost-per-lead in any contractor's whole ad account, because you're only paying to reach people who already showed interest.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Install the Meta pixel on every page of your website.</li>
+      <li>Build audiences: site visitors (180 days), video viewers, and anyone who engaged with your page.</li>
+      <li>Run $5–10 a day showing finished projects and reviews — not a hard sell.</li>
+      <li>Rotate creative every 30 days so people don't tune it out.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op18">
+  <summary class="op-head"><span class="opnum">18</span><span class="op-title">
+    <h3>Rebuild Meta — Don't Scale It</h3>
+    <p class="tagline">Same $50 a day, different setup, much better leads</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Replace instant forms with a landing page that asks budget, timeline, and whether they own the home. Fewer leads, worth far more.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>Current spend</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–4 weeks</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Instant forms produce taps, not buyers — exactly what your 4–6% close rate shows. A landing page with qualifying questions pushes cost per lead to about $60, but those leads will be homeowners with real budgets. Fewer leads, better leads, cheaper per actual <em>sale</em>.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Swap instant forms for a landing page form: own or rent, budget range, timeline, ZIP.</li>
+      <li>Accept the higher cost per lead. Track cost per <em>booked consultation</em> instead.</li>
+      <li>Use real before-and-after project video, never stock photos.</li>
+      <li>Exclude renters and target only homeowners in your 15 priority ZIPs.</li>
+      <li>Run the closet offer as its own campaign — different buyer, different message.</li>
+    </ol>
+  </div>
+</details>
+
+
+<!-- ============ TIER 4 ============ -->
+<section class="tier">
+  <p class="tier-rank">Priority 4 · Untapped niches</p>
+  <h2>Markets Your Competitors Ignore</h2>
+  <p class="why">Specific customer types with real money, urgent need, and far less price shopping than a typical homeowner. Most local remodelers never pursue any of these, which is exactly why they're worth your attention.</p>
+  <span class="tier-when later">Start weeks 5–12 · Mostly free to begin</span>
+</section>
+
+<details class="op" id="op19">
+  <summary class="op-head"><span class="opnum">19</span><span class="op-title">
+    <h3>Closet Niche Domination</h3>
+    <p class="tagline">Faster jobs, quicker cash, and a doorway into kitchens</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Treat closets as a separate business with its own landing page, its own ads, and its own Local Services Ads category — not a footnote on your remodeling site.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$300–800/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–60 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Your $80 closet lead cost on Meta is poor, but that's a channel problem, not a market problem. Closets are a genuinely different search market — less competition than kitchens, faster decisions, and jobs you can complete in days rather than weeks, which means quicker cash flow. Your competition is national franchises like Closettec and Bella Systems charging premium prices. A licensed local builder at fair pricing has a real wedge. Best of all, a closet customer who loves the work is the easiest kitchen sale you'll ever make.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Build a dedicated closet landing page separate from your main site.</li>
+      <li>Add "Closet Service" as its own Local Services Ads category — leads there are cheaper than kitchen.</li>
+      <li>Price against the franchises. You should be able to undercut them and still hold margin.</li>
+      <li>Target master bedroom closets in homes 15+ years old — those are undersized by modern standards.</li>
+      <li><strong>Every closet customer gets a kitchen and bathroom follow-up 90 days later.</strong></li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op20">
+  <summary class="op-head"><span class="opnum">20</span><span class="op-title">
+    <h3>Aging-in-Place &amp; Accessible Bathrooms</h3>
+    <p class="tagline">Growing demand, higher margins, almost no price shopping <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Get CAPS certified through NAHB (a few days, roughly $1,000), then market accessible bathroom conversions to homeowners over 60 and their adult children.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>~$1,000 certification</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–120 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Walk-in showers, grab bars, curbless entries, wider doorways — this work carries better margins than a standard bathroom and buyers rarely shop it on price, because the need is urgent and often medical. Your NJ and Bucks County service area has substantial older-homeowner populations. The Certified Aging-in-Place Specialist credential from NAHB is a genuine differentiator that occupational therapists, senior care managers, and hospital discharge planners actively look for when referring families. Very few remodelers hold it.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Take the NAHB CAPS certification — a few days and around $1,000.</li>
+      <li>Build a dedicated page for accessible bathroom conversions.</li>
+      <li>Introduce yourself to occupational therapists, senior care managers, and home health agencies in your area.</li>
+      <li>Contact hospital and rehab discharge planners — they advise families who need bathrooms modified fast.</li>
+      <li>Market to the <em>adult children</em> as much as the homeowner. They usually initiate and often pay.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op21">
+  <summary class="op-head"><span class="opnum">21</span><span class="op-title">
+    <h3>Insurance Restoration Work</h3>
+    <p class="tagline">Water and fire damage — the insurer pays the bill <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Introduce yourself to water-damage restoration companies and public adjusters in your area. They handle the emergency; someone has to rebuild afterward.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–120 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>A burst pipe under a kitchen sink or an upstairs bathroom leak means that room is being rebuilt — and insurance is paying. There's no price shopping and no long decision cycle, because the homeowner is displaced and wants it fixed now. Homeowners also very often upgrade beyond what insurance covers while the walls are already open, which turns a $12,000 claim into a $30,000 kitchen. Restoration companies do the dry-out and demolition but frequently don't do finish work — they need a reliable rebuild partner.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>List water-damage and fire restoration companies serving your ZIPs — Servpro franchises, local independents.</li>
+      <li>Introduce yourself as their finish-work and rebuild partner.</li>
+      <li>Connect with public adjusters, who represent homeowners against insurers and get asked for contractor referrals constantly.</li>
+      <li>Learn Xactimate estimating basics — it's the standard insurance format and you'll be taken more seriously.</li>
+      <li>Always present an upgrade option: "insurance covers this, but while the walls are open you could…"</li>
+    </ol>
+    <div class="flag"><span class="mark">Note</span><div>Insurance work has slower payment terms than retail jobs. Make sure your cash flow can absorb the wait before taking several at once.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op22">
+  <summary class="op-head"><span class="opnum">22</span><span class="op-title">
+    <h3>Kitchen &amp; Bath Showroom Partnerships</h3>
+    <p class="tagline">They sell the cabinets. Someone has to install them. <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Visit every cabinet, countertop, tile, and plumbing showroom within 30 miles. Ask to be on their installer referral list.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–90 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Someone standing in a cabinet showroom picking finishes has already decided to remodel and has a budget. Many showrooms sell materials but don't install, so they keep a short list of contractors to recommend — and being on that list means you meet buyers at the moment of highest intent, with the selling already done. Stone yards and countertop fabricators are especially valuable, since countertop replacement so often expands into a full kitchen.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Map every cabinet, countertop, tile, flooring, and plumbing showroom within 30 miles.</li>
+      <li>Visit in person during a quiet weekday. Bring photos of your work and your license.</li>
+      <li>Ask directly to be added to their installer referral list.</li>
+      <li>Offer to send <em>them</em> customers for material selection — reciprocity makes it stick.</li>
+      <li>Check in every quarter. Showroom staff turn over, and you want to stay top of mind.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op23">
+  <summary class="op-head"><span class="opnum">23</span><span class="op-title">
+    <h3>HOA &amp; 55+ Community Targeting</h3>
+    <p class="tagline">Hundreds of identical homes with identical dated kitchens <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Identify the 55+ and HOA communities in your ZIPs. Offer a free "kitchen design" talk at their clubhouse, then do one job at a neighborhood price.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$200–500</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–120 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Very High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>These communities are the most efficient market you can find. Every home has the same floor plan, the same original kitchen, and the same age. Residents talk constantly, they see each other's renovations, and one visible job can cascade into many. Because the layouts repeat, your second kitchen in a community is faster and more profitable than the first — you already know the plan. Central and southern NJ, especially your Ocean County ZIPs, have a high concentration of these developments.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>List every 55+ and large HOA community in your ZIPs — Ocean County has many.</li>
+      <li>Contact the activities director and offer a free educational talk: "Updating Your Kitchen — What It Really Costs."</li>
+      <li>Advertise in the community newsletter. It's cheap and residents genuinely read it.</li>
+      <li>Do your first job there at a deliberately attractive price in exchange for referrals and photos.</li>
+      <li>Build a fixed-price package for that exact floor plan and market it to the whole community.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op25">
+  <summary class="op-head"><span class="opnum">25</span><span class="op-title">
+    <h3>Estate Sales &amp; Probate Properties</h3>
+    <p class="tagline">Inherited homes get renovated almost immediately <span class="newbadge">New</span></p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Build relationships with estate attorneys and estate sale companies. They know about inherited homes months before anyone else does.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0–300/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–120 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate–High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>An inherited home is nearly always dated — often untouched for 30 years — and the heirs face a quick decision: renovate to sell for more, or renovate to move in. Either way work happens fast, and there's usually estate money available to pay for it. Probate filings are public record. Estate attorneys and estate sale companies know about these properties long before they hit the MLS, which puts you ahead of every other contractor.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Introduce yourself to estate and probate attorneys in Mercer, Middlesex, Somerset, and Bucks counties.</li>
+      <li>Connect with estate sale and clean-out companies — they're inside these homes first.</li>
+      <li>Probate filings are public record and searchable through county surrogate courts.</li>
+      <li>Lead with sensitivity, not sales. These are families dealing with a death.</li>
+      <li>Offer a straightforward service: assess the home, give one number to make it sellable.</li>
+    </ol>
+    <div class="flag"><span class="mark">Tone matters</span><div>Approach this respectfully. Position yourself as helping a family through a hard task, never as chasing an opportunity.</div></div>
+  </div>
+</details>
+
+
+<!-- ============ TIER 5 ============ -->
+<section class="tier">
+  <p class="tier-rank">Priority 5 · Ongoing, per job</p>
+  <h2>Neighborhood Dominance &amp; Public Data</h2>
+  <p class="why">Turn every active job site into a lead machine, and use public records to find homeowners who mathematically need work. Very few remodelers do any of this systematically.</p>
+  <span class="tier-when later">Start with your next job · $50–100 per project</span>
+</section>
+
+<details class="op" id="op26">
+  <summary class="op-head"><span class="opnum">26</span><span class="op-title">
+    <h3>The "50-Around" Door Hanger Drop</h3>
+    <p class="tagline">The warmest cold audience that exists — the neighbors</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>On the first week of every job, drop quality door hangers on the 50 closest homes. Include a QR code to that project's photos.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$50–100/job</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>Immediate</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Neighbors have the same home values, the same age of house, and the same problems as your customer. They've watched your trucks for weeks and they're already curious. Highest-converting offline tactic a remodeler has, at almost no cost.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Print quality door hangers — thick stock, real photos. Cheap ones damage your brand.</li>
+      <li>Drop on the 50 closest homes during the first week of every job.</li>
+      <li>Put a QR code linking to that project's design plans and progress photos.</li>
+      <li>Offer something specific — a free design layout or in-home consultation.</li>
+      <li>Do a second drop when the job is finished, with the after photos.</li>
+    </ol>
+    <div class="script"><strong>Door hanger copy</strong>"We're remodeling your neighbor's kitchen at [address]. Pardon our noise! Scan the code to see the design plans — and claim a free design layout for your own home. — Maximus Construction, licensed &amp; insured, NJ HIC #[number]"</div>
+  </div>
+</details>
+
+<details class="op" id="op27">
+  <summary class="op-head"><span class="opnum">27</span><span class="op-title">
+    <h3>QR-Code Job Site Signs</h3>
+    <p class="tagline">Free advertising for the whole length of every project</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Order yard signs with a big QR code and put one at every job. Write permission into your contract so it happens automatically.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Very Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$40–80/sign</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>Immediate</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate</dd></div>
+    </dl>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Order professional yard signs with a large QR code, phone number, and license number.</li>
+      <li>Write sign permission into your contract so it's automatic on every job.</li>
+      <li>Point the QR at that specific project's page, not your generic homepage.</li>
+      <li>Use a different QR per job so you can see which neighborhoods respond.</li>
+      <li>Leave the sign up two weeks after you finish — that's when it works hardest.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op28">
+  <summary class="op-head"><span class="opnum">28</span><span class="op-title">
+    <h3>Post-Project Neighborhood Walk-Through</h3>
+    <p class="tagline">One hour in a finished kitchen, a whole block of prospects</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Ask a happy customer if you can host neighbors for one hour on a Saturday before handover. Offer them something real in return.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$200–400/event</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>Per project</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Nothing sells remodeling like standing inside a finished one. Neighbors touch the work, ask questions, and hear the homeowner vouch for you — which no advertisement can match. Two or three serious prospects from one hour is realistic.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Ask the homeowner during the project, and offer a real incentive for saying yes.</li>
+      <li>Schedule a Saturday or Sunday, 11am–1pm, right before handover.</li>
+      <li>Invite the surrounding block with door hangers, plus Nextdoor and your customer list.</li>
+      <li>Keep it simple — wine, cheese, coffee. Bring your portfolio and a booking calendar.</li>
+      <li>Book consultations on the spot, then follow up in GHL within 24 hours.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op29">
+  <summary class="op-head"><span class="opnum">29</span><span class="op-title">
+    <h3>Permit Data &amp; Filtered Direct Mail</h3>
+    <p class="tagline">Public records show exactly who is spending on their home</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Pull NJ permit data from data.nj.gov for your ZIPs, filter for older homes recently bought, mail them a quality portfolio piece three times over 90 days.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$500–1,500/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>60–90 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate–High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>New Jersey publishes construction permit data openly. Someone who just pulled a permit is actively investing in their home. Even better is the reverse filter: homes 15+ years old, recently sold, with <em>no</em> major permit in the last decade. Those are dated interiors owned by people who just spent money on the house.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Download NJ Construction Permit Data from data.nj.gov, filtered to your priority ZIPs.</li>
+      <li>Cross-reference with property records: 15+ years old, $500k+ value, owner-occupied.</li>
+      <li>Mail a large, high-quality portfolio piece — not a postcard. You're selling a $35,000 service.</li>
+      <li>Mail the same list three times over 90 days. One mailing almost never works.</li>
+      <li>Use a unique phone number or landing page per mailing so you can measure honestly.</li>
+    </ol>
+    <div class="flag"><span class="mark">Rule</span><div>Never mail an unfiltered ZIP code. Blanket mailing without filtering for home age, value, and ownership is the fastest way to waste a direct mail budget.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op30">
+  <summary class="op-head"><span class="opnum">30</span><span class="op-title">
+    <h3>Nextdoor &amp; Local Facebook Groups</h3>
+    <p class="tagline">Verified homeowners openly asking for recommendations</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Claim your free Nextdoor page and join every local town Facebook group in your ZIPs. Answer questions helpfully. Never spam.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0–800/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>2–6 weeks</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>Nextdoor verifies users by home address — no renters, no time-wasters. Homeowners post "can anyone recommend a good kitchen contractor?" constantly on both Nextdoor and town Facebook groups, and a neighbor's answer beats any ad. Free to participate; paid Local Deals are optional once organic works.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Claim your free Nextdoor Business Page and complete it fully.</li>
+      <li>Join every town Facebook group across your priority ZIPs.</li>
+      <li>Answer recommendation threads helpfully without hard selling — obvious pitching gets you flagged or banned.</li>
+      <li>Ask past customers to recommend you by name. That's what actually converts.</li>
+      <li>Once organic works, test paid Nextdoor Local Deals in your best neighborhoods.</li>
+    </ol>
+  </div>
+</details>
+
+
+<!-- ============ TIER 6 ============ -->
+<section class="tier">
+  <p class="tier-rank">Priority 6 · Slow but compounding</p>
+  <h2>Long-Term Assets &amp; Sales Tools</h2>
+  <p class="why">Slow to start, but these turn into free leads and higher close rates that last for years. Begin them now precisely <em>because</em> they take time.</p>
+  <span class="tier-when later">Start weeks 9–12 · Results in 3–12 months</span>
+</section>
+
+<details class="op" id="op31">
+  <summary class="op-head"><span class="opnum">31</span><span class="op-title">
+    <h3>Local SEO Location Pages</h3>
+    <p class="tagline">One page per service per town — free leads once they rank</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Build one page per service per priority town, like /kitchen-remodeling-princeton-nj. Write each genuinely — never copy the same page 15 times with the town swapped.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$1k–3k</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>6–12 months</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>A page targeting "kitchen remodeling Princeton NJ" catches buyers at peak intent for free. The competitors ranking well in your market got there largely with cost-guide and location pages — the pattern is already proven in your exact market.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Build a page per service per priority town: /kitchen-remodeling-princeton-nj, /bathroom-remodeling-hamilton-nj.</li>
+      <li>Write genuinely local content — real projects, local house styles, township permit notes.</li>
+      <li>Add a cost guide page per county. These rank well and attract serious buyers.</li>
+      <li>Use real photos from that town, with location-tagged file names.</li>
+      <li>Restart the blog. Two useful posts a month shows Google you're active.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op32">
+  <summary class="op-head"><span class="opnum">32</span><span class="op-title">
+    <h3>Short-Form Video Case Studies</h3>
+    <p class="tagline">Before-and-after reels that build visual trust</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Film every job on your phone — before, demo, progress, reveal. Post 15–30 second transformations and always name the town.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>3–6 months</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>Moderate</dd></div>
+    </dl>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Film every job: before, demolition, progress, reveal. Phone footage is fine.</li>
+      <li>Post fast 15–30 second transformations to Instagram, TikTok, and YouTube Shorts.</li>
+      <li>Always name the town in the caption — that's what turns views into local leads.</li>
+      <li>Show the process, not just the finished room. Craftsmanship builds trust.</li>
+      <li>Reuse your best clips as Meta and YouTube ad creative — see #16 and #17.</li>
+    </ol>
+    <div class="flag"><span class="mark">Be honest</span><div>Measure in leads, not views. A reel with 100,000 views and zero calls is worth nothing.</div></div>
+  </div>
+</details>
+
+<details class="op" id="op33">
+  <summary class="op-head"><span class="opnum">33</span><span class="op-title">
+    <h3>Fixed-Price Productized Packages</h3>
+    <p class="tagline">Remove the fear of an unknown final number</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>Build three fixed-price kitchen packages at good/better/best. Name them, price them, and put them on your website with photos.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Medium</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$0</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>30–60 days</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>The number one thing that stops a homeowner from calling is not knowing what it will cost — and the fear it will spiral. "The Princeton Kitchen — $34,900, 4 weeks, everything included" removes that fear completely. It also speeds up your sales cycle, makes your estimating far more predictable, and pre-qualifies buyers before they ever take up your time. Pairs naturally with HOA communities from #23, where floor plans repeat.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Analyze your last several kitchens and find the common scope.</li>
+      <li>Build three packages — Essential, Signature, Premium — with fixed prices and clear inclusions.</li>
+      <li>Be explicit about what's <em>not</em> included, so there are no surprises later.</li>
+      <li>Show each package with real photos.</li>
+      <li>Use them as the anchor on estimates. Custom work then gets priced against a known baseline.</li>
+    </ol>
+  </div>
+</details>
+
+<details class="op" id="op34">
+  <summary class="op-head"><span class="opnum">34</span><span class="op-title">
+    <h3>AI Visualization at the Consultation</h3>
+    <p class="tagline">Show them their own kitchen, remodeled, while you're standing in it</p>
+  </span><span class="chev"><span class="chev-open">Open</span><span class="chev-close">Close</span></span></summary>
+  <div class="op-body">
+    <div class="dofirst"><span class="tag">Do this</span><p>At your free design consultation, photograph their kitchen and generate 2–3 AI renderings on the spot. Almost no local competitor does this.</p></div>
+    <dl class="specs">
+      <div class="spec"><dt>Difficulty</dt><dd>Low</dd></div>
+      <div class="spec"><dt>Cost</dt><dd>$20–100/mo</dd></div>
+      <div class="spec"><dt>Speed</dt><dd>Immediate</dd></div>
+      <div class="spec"><dt>Upside</dt><dd>High</dd></div>
+    </dl>
+    <h4>Why this works</h4>
+    <p>People struggle to picture a finished room from a description or a sample board. Showing them <em>their own kitchen</em> transformed collapses the imagination gap and creates emotional buy-in on the spot. It also makes you look far more advanced than the competing bids they're collecting, and it gives them something concrete to show a spouse who wasn't home. This is a close-rate tool rather than a lead-generation tool — and your close rate is where you're losing the most money.</p>
+    <h4>Steps</h4>
+    <ol class="steps">
+      <li>Pick an AI interior design tool that works from a photo.</li>
+      <li>Practice on your own past projects until you can produce something good in minutes.</li>
+      <li>At the consultation, photograph the space and generate 2–3 options in different styles.</li>
+      <li>Email the renderings the same day with your proposal.</li>
+      <li>Be clear it's a concept illustration, not a final construction drawing — never let it become a promise you can't build.</li>
+    </ol>
+  </div>
+</details>
+
+
+<!-- ============ AVOID ============ -->
+<section class="tier">
+  <p class="tier-rank">Do not pursue</p>
+  <h2>Where Not To Spend</h2>
+  <p class="why">Each of these drains money or attention that belongs in the tiers above.</p>
+  <span class="tier-when stopcolor">Skip these entirely</span>
+</section>
+
+<div class="avoid">
+  <dl>
+    <dt>Angi, HomeAdvisor, Thumbtack shared leads</dt>
+    <dd>The same lead gets sold to five to ten contractors at once. A structural race to the bottom on price that you can't win. Claim the free listings for the backlink, but never buy leads.</dd>
+
+    <dt>Spending more on Meta before fixing lead quality</dt>
+    <dd>More budget into instant forms buys more taps, not more customers. Fix the setup first.</dd>
+
+    <dt>Radio, newspaper, and billboards</dt>
+    <dd>No ZIP-code precision, no tracking, and priced for companies far bigger than yours.</dd>
+
+    <dt>Unfiltered mass mailers (EDDM)</dt>
+    <dd>Blanketing whole ZIP codes without filtering for home age, value, and ownership wastes most of the money on renters and unqualified households.</dd>
+
+    <dt>Serving all 100+ ZIP codes equally</dt>
+    <dd>Your list spans Middlesex, Mercer, Somerset, Ocean, and Bucks County — completely different income levels and drive times. <strong>Dominating 15 ZIPs beats being invisible in 100.</strong></dd>
+
+    <dt>A generic SEO retainer</dt>
+    <dd>You've tried this. Without reviews, Google Business Profile, and website trust fixed first, SEO spend has nothing to convert with.</dd>
+
+    <dt>Chasing followers and likes</dt>
+    <dd>Vanity metrics. Measure booked consultations and signed contracts, nothing else.</dd>
+
+    <dt>Aerial roof-scanning tools (EagleView, Roofle)</dt>
+    <dd>Genuinely effective — but roofing-only, and roofing isn't one of your three focus services. Revisit if roofing becomes a priority.</dd>
+
+    <dt>Trade shows and home shows</dt>
+    <dd>$3,000–8,000 per booth, mostly browsers, and the leads are shared with every other contractor in the hall. Your money goes further in Tiers 1 and 2.</dd>
+  </dl>
+</div>
+
+
+<!-- ============ 90 DAYS ============ -->
+<section class="tier">
+  <p class="tier-rank">Execution plan</p>
+  <h2>Your First 90 Days</h2>
+  <p class="why">The order matters more than the list. Don't attempt all 30 — the sequence below picks the highest-return items and stages them so each one makes the next work better.</p>
+</section>
+
+<div class="phase">
+  <div class="phase-top"><span class="phase-when">Weeks 1–2</span><h3>Free revenue and quick wins</h3><span class="spend">$0</span></div>
+  <ul class="plain">
+    <li>Call every past customer and ask for a Google review (#5)</li>
+    <li>Build the GHL review-request and warranty follow-up workflows (#5, #7)</li>
+    <li>Check and fix the homepage stat counters (#12)</li>
+  </ul>
+</div>
+
+<div class="phase">
+  <div class="phase-top"><span class="phase-when">Weeks 3–4</span><h3>Foundation and first partnerships</h3><span class="spend">~$500</span></div>
+  <ul class="plain">
+    <li>Apply for Google Local Services Ads — verification takes time (#13)</li>
+    <li>Begin weekly Google Business Profile posting (#10)</li>
+    <li>Contact 20 buyer's agents with the 24-hour inspection offer (#2)</li>
+    <li>Visit 10 kitchen and bath showrooms (#22)</li>
+    <li>Order door hangers and QR yard signs (#26, #27)</li>
+    <li>Claim Houzz, Yelp, BBB, and Nextdoor profiles (#11, #30)</li>
+  </ul>
+</div>
+
+<div class="phase">
+  <div class="phase-top"><span class="phase-when">Weeks 5–8</span><h3>Paid channels and niche markets</h3><span class="spend">$2k–3k/mo</span></div>
+  <ul class="plain">
+    <li>Launch Local Services Ads at $75–100/day in your 15 priority ZIPs (#13)</li>
+    <li>Rebuild Meta onto a qualifying landing page, add retargeting (#17, #18)</li>
+    <li>Launch the closet campaign as its own separate business (#19)</li>
+    <li>Set up MLS or PropStream alerts for as-is listings (#1)</li>
+    <li>Reach out to 10 interior designers (#4)</li>
+    <li>Run the 50-Around door hanger drop on every active job (#26)</li>
+  </ul>
+</div>
+
+<div class="phase">
+  <div class="phase-top"><span class="phase-when">Weeks 9–12</span><h3>Scale and expand</h3><span class="spend">$3k–4k/mo</span></div>
+  <ul class="plain">
+    <li>Launch exact-match Google Search Ads, then mirror them into Bing (#14, #15)</li>
+    <li>Test YouTube video ads in your best ZIPs (#16)</li>
+    <li>Build your first six location pages (#31)</li>
+    <li>Launch fixed-price packages (#33)</li>
+    <li>Start AI visualization at every consultation (#34)</li>
+    <li>Approach listing agents about pre-sale upgrades, and 55+ communities (#3, #23)</li>
+  </ul>
+</div>
+
+<h4 style="font-family:Archivo,sans-serif;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin:42px 0 0;">Track only these five numbers</h4>
+<dl class="kpi">
+  <div><dt>Google reviews</dt><dd>50</dd><div class="sub">from 6 today</div></div>
+  <div><dt>Booked consultations</dt><dd>20<span style="font-size:17px;">/mo</span></dd><div class="sub">not raw leads</div></div>
+  <div><dt>Consult → sale</dt><dd>30%</dd><div class="sub">measure every estimate</div></div>
+  <div><dt>Cost per sale</dt><dd>&lt;$600</dd><div class="sub">against $8k–15k profit</div></div>
+  <div><dt>Customers</dt><dd>6–8<span style="font-size:17px;">/mo</span></dd><div class="sub">from 2–3 today</div></div>
+</dl>
+
+<div class="closing">
+  <h2>The Core Logic</h2>
+  <p>Your problem was never a shortage of leads — it was <strong>buying the lowest-intent traffic available</strong> while missing the trust signals that convert higher-intent buyers. Fifty Facebook taps a month producing two customers is the predictable result.</p>
+  <p>The fix runs in one direction: <strong>build trust first</strong>, <strong>then buy intent</strong> (Local Services Ads, Search, YouTube), <strong>and at the same time build relationships that never need ad spend</strong> (agents, designers, showrooms, neighborhoods).</p>
+  <p>Don't try all 30. Finish Tier 2, switch on Local Services Ads, and open five agent conversations. That alone should take you from 2–3 customers a month toward 6–8. The niches in Tier 4 — closets, accessible bathrooms, insurance work, 55+ communities — are where you'd go next to double again, because almost nobody local is competing for them.</p>
+</div>
+
+<footer>
+  <p>Prepared for Maximus Construction LLC · Ewing, NJ · August 2026<br>
+  Market data from NJ Division of Consumer Affairs, PA Attorney General HICPA, NJ Construction Permit Open Data, Houzz Princeton market listings, and 2026 remodeling industry cost and advertising benchmarks.</p>
+</footer>
+
+</div>
